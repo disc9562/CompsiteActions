@@ -1,0 +1,18 @@
+name: 'Run Firebase'
+description: 'Run Firebase compsite script'
+inputs:
+  num-shards:  # numShards of input
+    description: 'num shards'
+    required: true
+    default: '4'
+  shards-index:  # shardsIndex of input
+    description: 'shards index'
+    required: true
+    default: '0'
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello ${{ inputs.num-shards }}.
+      shell: bash
+    - run: echo Hello ${{ inputs.shards-index }}.
+      shell: bash
